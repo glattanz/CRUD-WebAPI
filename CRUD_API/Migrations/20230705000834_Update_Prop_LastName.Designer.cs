@@ -3,6 +3,7 @@ using CRUD_API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_API.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20230705000834_Update_Prop_LastName")]
+    partial class Update_Prop_LastName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +24,7 @@ namespace CRUD_API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CRUD_API.Models.Pessoa", b =>
+            modelBuilder.Entity("CRUD_API.Models.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,24 +32,24 @@ namespace CRUD_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Idade")
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Lastname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Profissao")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sobrenome")
+                    b.Property<string>("Occupation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pessoas");
+                    b.ToTable("People");
                 });
 #pragma warning restore 612, 618
         }
