@@ -16,6 +16,8 @@ namespace CRUD_API
         {
             services.AddDbContext<Context>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
 
+            services.AddCors();
+
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
@@ -27,13 +29,24 @@ namespace CRUD_API
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
             }
+            
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
         }
     }
 }
