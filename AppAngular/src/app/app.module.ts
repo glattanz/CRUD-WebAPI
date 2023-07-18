@@ -8,12 +8,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal'
 import { PersonService } from './person.service';
-import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PersonComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
