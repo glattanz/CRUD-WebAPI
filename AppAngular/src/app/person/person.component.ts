@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Person } from '../person-model';
+import { PersonService } from '../person.service';
 
 @Component({
   selector: 'app-person',
@@ -26,5 +28,9 @@ export class PersonComponent {
 
   SendForm(): void {
     const person : Person = this.form.value;
-  } 
+
+    this.personService.Create(person).subscribe((result) => {
+      alert('Person created!');
+    });
+  }
 }
