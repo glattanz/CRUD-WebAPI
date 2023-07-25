@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Person } from '../person-model';
 import { PersonService } from '../person.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-person',
@@ -13,10 +14,15 @@ export class PersonComponent {
   form: any;
   formTitle: string | undefined;
   people: Person[] | undefined;
+  personName: string | undefined;
+  personId: number | undefined;
   tableVisibility: boolean = true;
   formVisibility: boolean = false;
+  modalRef: BsModalRef | undefined;
 
-  constructor(private personService: PersonService) {}
+  constructor(
+    private personService: PersonService,
+    private modalService: BsModalService) {}
 
   ngOnInit(): void{
 
@@ -62,10 +68,26 @@ export class PersonComponent {
     });
   }
 
+  ShowDeleteConfirmation(id: any, name: string | undefined, modalContent: TemplateRef<any>): void {
+    this.modalRef = this.modalService.show(modalContent);
+    this.personId = id;
+    this.personName = name;
+  }
+
+  Delete(id: number){
+    this.personService.Delete(id).subscribe(result => {
+      this.modalRef?.hide();
+      alert('Person deleted!');
+      this.personService.List().subscribe(result => {
+        this.people = result
+      })
+    })
+  }
+
   SendForm(): void {
     const person : Person = this.form.value;
 
-    if (person?.id > 0) {
+    if (person.id > 0) {
       this.personService.Update(person).subscribe((result) => {
         this.tableVisibility = true;
         this.formVisibility = false;
