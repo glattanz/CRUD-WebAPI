@@ -45,11 +45,44 @@ export class PersonComponent {
     });
   }
 
+  ShowEditForm(personId: any): void {
+    this.tableVisibility = false;
+    this.formVisibility = true;
+
+    this.personService.GetById(personId).subscribe(result => {
+      this.formTitle = `Edit ${result.name} ${result.lastName}`;
+
+        this.form = new FormGroup({
+        id: new FormControl(result.id),
+        name: new FormControl(result.name),
+        lastName: new FormControl(result.lastName),
+        age: new FormControl(result.age),
+        occupation: new FormControl(result.occupation)
+      });
+    });
+  }
+
   SendForm(): void {
     const person : Person = this.form.value;
 
+    if (person?.id > 0) {
+      this.personService.Update(person).subscribe((result) => {
+        this.tableVisibility = true;
+        this.formVisibility = false;
+        alert('Person updated!');
+
+        this.personService.List().subscribe(result => {
+          this.people = result});
+      });
+    }
+
     this.personService.Create(person).subscribe((result) => {
+      this.tableVisibility = true;
+      this.formVisibility = false;
       alert('Person created!');
+
+      this.personService.List().subscribe(result => {
+        this.people = result});
     });
   }
 

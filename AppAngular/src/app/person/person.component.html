@@ -21,7 +21,7 @@
         <td>{{ person.occupation }}</td>
 
         <td>
-          <button type="button" class="btn btn-sm btn-outline-info">
+          <button type="button" class="btn btn-sm btn-outline-info" (click)="ShowEditForm(person.id)">
             Edit
           </button>
           <button type="button" class="btn btn-sm btn-outline-danger">
