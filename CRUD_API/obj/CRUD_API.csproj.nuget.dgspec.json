@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabrielle.martins\\Documents\\Pessoal\\Estudo\\CRUD-WebAPI\\CRUD_API\\CRUD_API.csproj": {}
+    "C:\\Users\\glatt\\Documents\\Pessoal\\CRUD WebAPI\\CRUD_API\\CRUD_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabrielle.martins\\Documents\\Pessoal\\Estudo\\CRUD-WebAPI\\CRUD_API\\CRUD_API.csproj": {
+    "C:\\Users\\glatt\\Documents\\Pessoal\\CRUD WebAPI\\CRUD_API\\CRUD_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabrielle.martins\\Documents\\Pessoal\\Estudo\\CRUD-WebAPI\\CRUD_API\\CRUD_API.csproj",
+        "projectUniqueName": "C:\\Users\\glatt\\Documents\\Pessoal\\CRUD WebAPI\\CRUD_API\\CRUD_API.csproj",
         "projectName": "CRUD_API",
-        "projectPath": "C:\\Users\\gabrielle.martins\\Documents\\Pessoal\\Estudo\\CRUD-WebAPI\\CRUD_API\\CRUD_API.csproj",
-        "packagesPath": "C:\\Users\\gabrielle.martins\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabrielle.martins\\Documents\\Pessoal\\Estudo\\CRUD-WebAPI\\CRUD_API\\obj\\",
+        "projectPath": "C:\\Users\\glatt\\Documents\\Pessoal\\CRUD WebAPI\\CRUD_API\\CRUD_API.csproj",
+        "packagesPath": "C:\\Users\\glatt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\glatt\\Documents\\Pessoal\\CRUD WebAPI\\CRUD_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gabrielle.martins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\glatt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
